@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public bool isInfected { get; private set; }
+
     private Rigidbody _rigidbody;
     private SpringJoint joint;
     private LineRenderer _lineRenderer;
@@ -17,10 +19,20 @@ public class Player : MonoBehaviour
         _lineRenderer = GetComponentInChildren<LineRenderer>();
     }
 
+    public void Infect()
+    {
+        isInfected = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
         Jump();
+        
+        if (isInfected)
+            transform.localScale = Vector3.one * 2.0f;
+        else
+            transform.localScale = Vector3.one;
     }
 
     void LateUpdate()
@@ -73,10 +85,19 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isInfected = !isInfected && other.gameObject.GetComponent<Player>().isInfected;
+            print(isInfected);
+        }
         if (other.gameObject.CompareTag("Bouncy Platform"))
         {
             _rigidbody.AddForce(Vector3.up * 10, ForceMode.VelocityChange);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.CompareTag("Booster"))
         {
             _rigidbody.AddForce(other.gameObject.transform.forward * 20.0f, ForceMode.VelocityChange);

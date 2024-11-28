@@ -4,11 +4,23 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance { get; private set; }
+    
     [Header("HUD")]
     [SerializeField] private TextMeshProUGUI timer;
     
     [Header("Pause Screen")]
     [SerializeField] private Image pauseScreen;
+    
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        instance = this;
+    }
 
     private void Update()
     {
