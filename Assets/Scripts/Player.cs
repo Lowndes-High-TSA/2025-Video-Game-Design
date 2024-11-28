@@ -65,16 +65,36 @@ public class Player : MonoBehaviour
 
     public void StartSwing()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 25.0f, LayerMask.GetMask("Attach Points")))
+        GameObject[] attachPoints = GameObject.FindGameObjectsWithTag("Attach");
+        GameObject closestAttachPoint = attachPoints[0];
+        float closestDistance = 1000; //add your max range here
+        foreach (var attachPoint in attachPoints)
         {
-            _swingPoint = hit.point;
-            joint = gameObject.AddComponent<SpringJoint>();
-            joint.autoConfigureConnectedAnchor = false;
-            joint.connectedAnchor = _swingPoint;
-            
-            _lineRenderer.positionCount = 2;
+            float distance = Vector3.Distance(attachPoint.transform.position, transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestAttachPoint = attachPoint;
+            }
         }
+        
+        _swingPoint = closestAttachPoint.transform.position;
+        joint = gameObject.AddComponent<SpringJoint>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = _swingPoint;
+        
+        _lineRenderer.positionCount = 2;
+    
+        // RaycastHit hit;
+        // if (Physics.Raycast(transform.position, Vector3.forward, out hit, 25.0f, LayerMask.GetMask("Attach Points")))
+        // {
+        //     _swingPoint = hit.point;
+        //     joint = gameObject.AddComponent<SpringJoint>();
+        //     joint.autoConfigureConnectedAnchor = false;
+        //     joint.connectedAnchor = _swingPoint;
+        //     
+        //     _lineRenderer.positionCount = 2;
+        // }
     }
 
     public void StopSwing()

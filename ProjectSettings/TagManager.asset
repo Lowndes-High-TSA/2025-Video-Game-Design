@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bouncy Platform
   - Booster
+  - Attach
   layers:
   - Default
   - TransparentFX

@@ -9,10 +9,6 @@ public class InputManager : MonoBehaviour
     [Header("UI Input Controls")]
     [SerializeField] private KeyCode pause = KeyCode.Escape;
     
-    [Header("Game Events")]
-    [SerializeField] private UnityEvent onSwingStart;
-    [SerializeField] private UnityEvent onSwingEnd;
-    
     private void Update()
     {
         Pause();

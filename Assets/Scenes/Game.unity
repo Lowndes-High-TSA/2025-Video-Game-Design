@@ -806,7 +806,7 @@ Transform:
   m_GameObject: {fileID: 296490018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17, y: 4, z: 0}
+  m_LocalPosition: {x: 22.5, y: 4, z: 9.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 435916925}
   m_Layer: 3
   m_Name: Attach 6
-  m_TagString: Untagged
+  m_TagString: Attach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 438742259}
   m_Layer: 3
   m_Name: Attach 5
-  m_TagString: Untagged
+  m_TagString: Attach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1616,7 +1616,7 @@ GameObject:
   - component: {fileID: 628016699}
   m_Layer: 3
   m_Name: Attach 2
-  m_TagString: Untagged
+  m_TagString: Attach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,7 +1758,7 @@ GameObject:
   - component: {fileID: 728982258}
   m_Layer: 3
   m_Name: Attach 7
-  m_TagString: Untagged
+  m_TagString: Attach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2645,36 +2645,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swing: 61000000670000006c00000011010000
   pause: 27
-  onSwingStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1594771695}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: StartSwing
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onSwingEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1594771695}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: StopSwing
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1292454655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,7 +2737,7 @@ GameObject:
   - component: {fileID: 1308829962}
   m_Layer: 3
   m_Name: Attach 4
-  m_TagString: Untagged
+  m_TagString: Attach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3011,7 +2981,7 @@ GameObject:
   - component: {fileID: 1361186090}
   m_Layer: 3
   m_Name: Attach 1
-  m_TagString: Untagged
+  m_TagString: Attach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3306,7 +3276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9151609738510698947, guid: eeea70836a96a438296f263cb5e46e4b, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 114
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3343,7 +3313,7 @@ GameObject:
   - component: {fileID: 1616112130}
   m_Layer: 3
   m_Name: Attach 3
-  m_TagString: Untagged
+  m_TagString: Attach
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
